@@ -9,7 +9,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 
 public class DataFetcher {
-    private static final String URL = "http://"; // Replace URL
+    private static final String URL = "http://"; // Replace URL//
     private final OkHttpClient client = new OkHttpClient();
 
     public interface DataCallback {
