@@ -28,9 +28,9 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
     }
-    public void modify_angle_1(double angle) {
-        angle_1.setText(angle.toString());
-    }
-
-
+//    public void modify_angle_1(double angle) {
+//        angle_1.setText(angle.toString());
+//    }
+//
+//
 }
