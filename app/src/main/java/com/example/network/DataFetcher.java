@@ -1,5 +1,7 @@
 package com.example.network;
 
+import android.util.Log;
+
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -13,8 +15,8 @@ import java.io.IOException;
 
 
 public class DataFetcher {
-    private static final String URL1 = "http://"; // Replace URL//
-    private static final String URL2 = "http://"; // Replace URL//
+    private static final String URL1 = "http://192.168.42.1/angle"; // Replace URL//
+    private static final String URL2 = "http://192.168.1.161/angle"; // Replace URL//
     private final OkHttpClient client = new OkHttpClient();
 
     public interface DataCallback {
@@ -31,6 +33,7 @@ public class DataFetcher {
                     if (response1.isSuccessful() && response1.body() != null && response2.isSuccessful() && response2.body() != null) {
                         String html1 = response1.body().string();
                         String html2 = response2.body().string();
+                        Log.d("Network", "fetchData: " + html1);
                         callback.onDataReceived(html1, html2);
 
 //                        Pattern pattern = Pattern.compile("\\d+(\\.\\d)?\\d*\\s");
