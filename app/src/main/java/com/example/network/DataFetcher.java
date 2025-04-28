@@ -13,7 +13,8 @@ import java.io.IOException;
 
 
 public class DataFetcher {
-    private static final String URL = "http://"; // Replace URL//
+    private static final String URL1 = "http://"; // Replace URL//
+    private static final String URL2 = "http://"; // Replace URL//
     private final OkHttpClient client = new OkHttpClient();
 
     public interface DataCallback {
@@ -24,8 +25,8 @@ public class DataFetcher {
     public void fetchData(DataCallback callback) {
         new Thread(() -> {
             try {
-                Request request1 = new Request.Builder().url(URL).build();
-                Request request2 = new Request.Builder().url(URL).build();
+                Request request1 = new Request.Builder().url(URL1).build();
+                Request request2 = new Request.Builder().url(URL2).build();
                 try (Response response1 = client.newCall(request1).execute(); Response response2 = client.newCall(request2).execute()) {
                     if (response1.isSuccessful() && response1.body() != null && response2.isSuccessful() && response2.body() != null) {
                         String html1 = response1.body().string();
